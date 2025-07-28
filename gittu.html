@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-</head>
-<body>
-      <h1 id="secret-info">My secret info</h1>
-      <input id="delete-confirm" type="text" placeholder="please type delete">
-      <button id="btn-delete">Delete</button>
-      <script>
-            document.getElementById('delete-confirm').addEventListener('keyup',function(){
-                  const text = event.target.value;
-                  const deleteButton = document.getElementById('btn-delete');
-                  if(text=== 'delete'){
-                        deleteButton. removeAttribute('disabled');
-                  }else{
-                        deleteButton.setAttribute('disabled',true);
-                  }
-            })
-            document.getElementById('btn-delete').addEventListener('click',function(){
-                  const secret = document.getElementById('secret-info');
-                  secret.style.display = 'none';
-            })
-      </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="secret-info">My secret info</h1>
+    <input id="delete-confirm" type="text" placeholder="please type delete" />
+    <button id="btn-delete" disabled>Delete</button>
+    <script>
+      document
+        .getElementById("delete-confirm")
+        .addEventListener("keyup", function (event) { //ei jaygay event use hoyeche pore call korar jonno jate kore easily amra eitar value ta pai
+          //ei  line ar er porer line ta use hoyeche muloto amra  j key press 
+          //korchi eita thik thak moto show kore naki na ejonne use hoyeche
+          const text = event.target.value;
+          const deleteButton = document.getElementById("btn-delete");// ei line theke porer line gula mulot bujhano hoiyeche j attribute ta use korcchi oita sorto ssapekkhe delete likhle delete ,delete hobe noyto (delete er bahire beshi kichu likhle delete hbe na .)
+          if (text === "delete") {
+            deleteButton.removeAttribute("disabled");
+          } else {
+            deleteButton.setAttribute("disabled", true);
+          }
+        });
+      document
+        .getElementById("btn-delete")
+        .addEventListener("click", function () {
+          const secret = document.getElementById("secret-info"); // eita mulot use kora hoyeche ashole ami kon likha ta hide korte chaitesi
+          secret.style.display = "none"; //ei line muloto h1 likha ta hide korar jonno use kora hoyeche
+        });
+    </script>
+  </body>
 </html>
